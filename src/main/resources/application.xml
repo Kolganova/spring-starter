@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+            http://www.springframework.org/schema/beans/spring-beans.xsd
+            http://www.springframework.org/schema/context
+            http://www.springframework.org/schema/context/spring-context-4.0.xsd">
+
+    <context:annotation-config/>
+    <context:property-placeholder location="classpath:application.properties"/>
+
+    <bean class="com.kolganova.spring.bpp.InjectBeanPostProcessor"/>
+
+<!--    <bean class="org.springframework.context.annotation.CommonAnnotationBeanPostProcessor"/>-->
+
+    <!--    <bean class="org.springframework.context.support.PropertySourcesPlaceholderConfigurer">-->
+    <!--        <property name="locations" value="application.properties"/>-->
+    <!--    </bean>-->
+
+    <bean class="com.kolganova.spring.bfpp.LogBeanFactoryPostProcessor"/>
+    <bean class="com.kolganova.spring.bfpp.VerifyPropertyBeanFactoryPostProcessor"/>
+
+    <bean id="driver" class="java.lang.String">
+        <constructor-arg type="java.lang.String" value="${db.driver}"/>
+    </bean>
+
+    <bean id="connectionPool" name="p1" class="com.kolganova.spring.database.pool.ConnectionPool">
+        <constructor-arg type="java.lang.String" name="username" value="${db.username}"/>
+        <constructor-arg type="java.lang.Integer" name="poolSize" value="${db.pool.size}"/>
+        <constructor-arg type="java.util.List" name="args">
+            <list>
+                <value>value1</value>
+                <value>value3</value>
+                <value>value3</value>
+            </list>
+        </constructor-arg>
+        <constructor-arg type="java.util.Map" name="properties">
+            <null/>
+        </constructor-arg>
+
+        <property name="properties">
+            <map>
+                <entry key="url" value="${db.url}"/>
+                <entry key="password" value="${db.password}"/>
+                <entry key="test" value="#{driver.length() > 10}"/>
+                <entry key="hosts" value="#{'${db.hosts}'.split(',')}"/>
+<!--                <entry key="currentUser" value="#{systemProperties[user.name]}"/>-->
+            </map>
+        </property>
+    </bean>
+    <!--    <bean id="pool2" class="com.kolganova.spring.database.pool.ConnectionPool"/>-->
+<!--    <bean id="companyRepository" class="com.kolganova.spring.database.repository.CompanyRepository" factory-method="of">-->
+<!--        <constructor-arg ref="connectionPool"/>-->
+<!--    </bean>-->
+</beans>
