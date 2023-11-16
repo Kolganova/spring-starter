@@ -5,18 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="adbf0e0e-e98f-49ce-adfb-7cefbbbca7b9" name="Changes" comment="*">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/kolganova/spring/config/JpaConfiguration.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/kolganova/spring/config/condition/JpaCondition.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/kolganova/spring/bfpp/LogBeanFactoryPostProcessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kolganova/spring/bfpp/LogBeanFactoryPostProcessor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/kolganova/spring/bfpp/VerifyPropertyBeanFactoryPostProcessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kolganova/spring/bfpp/VerifyPropertyBeanFactoryPostProcessor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/kolganova/spring/bpp/AuditingBeanPostProcessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kolganova/spring/bpp/AuditingBeanPostProcessor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/kolganova/spring/bpp/InjectBeanPostProcessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kolganova/spring/bpp/InjectBeanPostProcessor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/kolganova/spring/bpp/TransactionBeanPostProcessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kolganova/spring/bpp/TransactionBeanPostProcessor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/kolganova/spring/ApplicationRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kolganova/spring/ApplicationRunner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/kolganova/spring/config/ApplicationConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kolganova/spring/config/ApplicationConfiguration.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/kolganova/spring/database/pool/ConnectionPool.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kolganova/spring/database/pool/ConnectionPool.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/kolganova/spring/database/repository/CompanyRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kolganova/spring/database/repository/CompanyRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/kolganova/spring/database/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kolganova/spring/database/repository/UserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/kolganova/spring/service/CompanyService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kolganova/spring/service/CompanyService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/kolganova/spring/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kolganova/spring/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.xml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,9 +45,9 @@
       <list>
         <option value="spring-beans.schema" />
         <option value="Interface" />
+        <option value="AnnotationType" />
         <option value="Record" />
         <option value="Class" />
-        <option value="AnnotationType" />
       </list>
     </option>
   </component>
@@ -70,6 +67,10 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
@@ -82,6 +83,8 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.kolganova.spring.config.condition" />
+      <recent name="com.kolganova.spring.listener.entity" />
       <recent name="com.kolganova.spring.bpp" />
       <recent name="com.kolganova.spring.database.pool" />
       <recent name="com.kolganova.spring.database.repository" />
@@ -92,7 +95,7 @@
       <recent name="com.kolganova.spring.database.repository" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.ApplicationRunner">
+  <component name="RunManager" selected="Spring Boot.ApplicationRunner">
     <configuration name="ApplicationRunner" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.kolganova.spring.ApplicationRunner" />
       <module name="spring-starter.main" />
@@ -128,8 +131,22 @@
       <RunAsTest>false</RunAsTest>
       <method v="2" />
     </configuration>
+    <configuration name="ApplicationRunner" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="spring-starter.main" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.kolganova.spring.ApplicationRunner" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.kolganova.spring.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Spring Boot.ApplicationRunner" />
         <item itemvalue="Application.ApplicationRunner" />
         <item itemvalue="Gradle.spring-starter [build]" />
       </list>
@@ -143,7 +160,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1699959786466</updated>
-      <workItem from="1699959787574" duration="31085000" />
+      <workItem from="1699959787574" duration="48506000" />
     </task>
     <task id="LOCAL-00001" summary="*">
       <option name="closed" value="true" />
@@ -161,7 +178,23 @@
       <option name="project" value="LOCAL" />
       <updated>1700076235825</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="*">
+      <option name="closed" value="true" />
+      <created>1700087824278</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1700087824278</updated>
+    </task>
+    <task id="LOCAL-00004" summary="*">
+      <option name="closed" value="true" />
+      <created>1700167380124</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1700167380124</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

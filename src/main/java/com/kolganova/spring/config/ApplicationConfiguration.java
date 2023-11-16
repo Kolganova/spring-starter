@@ -41,7 +41,7 @@ public class ApplicationConfiguration {
     }
 
     @Bean
-    public UserRepository userRepository2() {
+    public UserRepository userRepository3() {
         return new UserRepository(pool3());
     }
 

@@ -1,10 +1,9 @@
 package com.kolganova.spring.database.pool;
 
+import jakarta.annotation.PostConstruct;
+import jakarta.annotation.PreDestroy;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
-
-import javax.annotation.PostConstruct;
-import javax.annotation.PreDestroy;
 
 @Component("p1")
 public class ConnectionPool {
