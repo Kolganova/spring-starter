@@ -1,23 +1,22 @@
 package com.kolganova.spring;
 
+import com.kolganova.spring.config.ApplicationConfiguration;
 import com.kolganova.spring.database.pool.ConnectionPool;
-import com.kolganova.spring.database.repository.CompanyRepository;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
+import com.kolganova.spring.service.CompanyService;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 public class ApplicationRunner {
 
     public static void main(String[] args) {
-        try (ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("application.xml")) {
+        try (AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext()) {
+            context.register(ApplicationConfiguration.class);
+            context.getEnvironment().setActiveProfiles("prod", "web", "test");
+            context.refresh();
             ConnectionPool connectionPool = context.getBean("p1", ConnectionPool.class);
 
-            CompanyRepository companyRepository = context.getBean("companyRepository", CompanyRepository.class);
+            CompanyService companyService = context.getBean("companyService", CompanyService.class);
 //            System.out.println(crudRepository.findById(1));
-            System.out.println(companyRepository.getPools().get(0));
-            System.out.println(companyRepository.getPoolSize());
-
-//            System.out.println(context.getBean("connectionPool", ConnectionPool.class));
-//            System.out.println(context.getBean("connectionPool", ConnectionPool.class));
-//            System.out.println(context.getBean("companyRepository", CompanyRepository.class));
+            System.out.println(companyService.findById(1));
         }
     }
 

@@ -17,7 +17,6 @@ public class ConnectionPool {
         this.username = username;
         this.poolSize = poolSize;
     }
-
     @PostConstruct
     private void init() {
         System.out.println("Init connection pool");
