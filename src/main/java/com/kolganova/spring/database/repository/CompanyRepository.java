@@ -3,6 +3,7 @@ package com.kolganova.spring.database.repository;
 import com.kolganova.spring.database.entity.Company;
 import com.kolganova.spring.database.pool.ConnectionPool;
 import jakarta.annotation.PostConstruct;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.beans.factory.config.BeanDefinition;
 import org.springframework.context.annotation.Scope;
@@ -15,19 +16,13 @@ import java.util.Optional;
 //@Auditing
 @Scope(BeanDefinition.SCOPE_SINGLETON)
 @Repository
+@RequiredArgsConstructor
 public class CompanyRepository implements CrudRepository<Integer, Company> {
 
     private final ConnectionPool p1;
     private final List<ConnectionPool> pools;
+    @Value("${db.pool.size}")
     private Integer poolSize;
-
-    public CompanyRepository(ConnectionPool p1,
-                             List<ConnectionPool> pools,
-                             @Value("${db.pool.size}") Integer poolSize) {
-        this.p1 = p1;
-        this.pools = pools;
-        this.poolSize = poolSize;
-    }
 
     @Override
     public Optional<Company> findById(Integer id) {

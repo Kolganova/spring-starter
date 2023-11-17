@@ -1,27 +1,24 @@
 package com.kolganova.spring.config;
 
 import com.kolganova.spring.database.pool.ConnectionPool;
-import com.kolganova.spring.database.repository.CrudRepository;
 import com.kolganova.spring.database.repository.UserRepository;
 import com.kolganova.web.config.WebConfiguration;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.*;
-import org.springframework.context.annotation.ComponentScan.Filter;
-import org.springframework.stereotype.Component;
 
 //@ImportResource("classpath:application.xml")
 @Import({
         WebConfiguration.class
 })
 @Configuration
-@PropertySource("classpath:application.properties")
-@ComponentScan(basePackages = "com.kolganova.spring",
-        useDefaultFilters = false,
-        includeFilters = {
-                @Filter(type = FilterType.ANNOTATION, value = Component.class),
-                @Filter(type = FilterType.ASSIGNABLE_TYPE, value = CrudRepository.class),
-                @Filter(type = FilterType.REGEX, pattern = "com\\..+Repository"),
-        })
+//@PropertySource("classpath:application.properties")
+//@ComponentScan(basePackages = "com.kolganova.spring",
+//        useDefaultFilters = false,
+//        includeFilters = {
+//                @Filter(type = FilterType.ANNOTATION, value = Component.class),
+//                @Filter(type = FilterType.ASSIGNABLE_TYPE, value = CrudRepository.class),
+//                @Filter(type = FilterType.REGEX, pattern = "com\\..+Repository"),
+//        })
 public class ApplicationConfiguration {
 
     @Bean
