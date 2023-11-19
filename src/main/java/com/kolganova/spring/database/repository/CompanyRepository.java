@@ -4,6 +4,7 @@ import com.kolganova.spring.database.entity.Company;
 import com.kolganova.spring.database.pool.ConnectionPool;
 import jakarta.annotation.PostConstruct;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.beans.factory.config.BeanDefinition;
 import org.springframework.context.annotation.Scope;
@@ -14,6 +15,7 @@ import java.util.Optional;
 
 //@Transaction
 //@Auditing
+@Slf4j
 @Scope(BeanDefinition.SCOPE_SINGLETON)
 @Repository
 @RequiredArgsConstructor
@@ -26,18 +28,18 @@ public class CompanyRepository implements CrudRepository<Integer, Company> {
 
     @Override
     public Optional<Company> findById(Integer id) {
-        System.out.println("finById method...");
+        log.info("finById method...");
         return Optional.of(new Company(id));
     }
 
     @Override
     public void delete(Company entity) {
-        System.out.println("delete method...");
+        log.warn("delete method...");
     }
 
     @PostConstruct
     private void init() {
-        System.out.println("init company repository");
+        log.warn("init company repository");
     }
 
 }
